@@ -62,3 +62,21 @@ body {
                 background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
                 opacity 0.55s ease;
 }
+
+.menu-container span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.menu-container span:nth-child(3) {
+    transform-origin: 0% 100%;
+}
+
+.menu-container input:checked ~ span:nth-child(4) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-container input:checked ~ span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 11px);
+}
+
