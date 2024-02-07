@@ -80,3 +80,87 @@ body {
     transform: rotate(-45deg) translate(-5px, 11px);
 }
 
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+/*mobile styles*/
+
+@media only screen and (max-width: 767px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .menu-logo {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-logo img {
+        max-height: 30px;
+    }
+
+    .menu {
+        position: absolute;
+        box-sizing: border-box;
+        width: 300px;
+        right: -300px;
+        top: 0;
+        margin: -20px;
+        padding: 75px 50px 50px;
+        background: #cdcdcd;
+        -webkit-font-smoothing: antialiased;
+        /*remove the flickering of text in safari*/
+        transform-origin: 0% 0%;
+        transform: translateX(0%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    .menu-container input:checked ~ .menu {
+        transform: translate(-100%);
+    }
+}
+
+/* desktop styles */
+@media only screen and (min-width: 768px) {
+    .menu-container {
+        width: 100%;
+    }
+
+    .menu-container a {
+        color: #cdcdcd;
+    }
+
+    .menu-container input {
+        display: none;
+    }
+
+    /* Burger menu */
+    .menu-container span {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu ul {
+        display: flex;
+        padding: 0;
+    }
+
+    .menu li {
+        padding: 0 20px;
+    }
+}
